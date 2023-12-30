@@ -1,0 +1,19 @@
+<div class="table-header">
+  <div
+    class="table-header__title"
+    *ngFor="let title of titles"
+    [class.table-header__title--center]="title.name === 'Статус'"
+    [style]="{width: 'calc(100% / ' + titles.length + ')'}"
+  >
+    <div>{{ title.name }}</div>
+    <p-button
+      *ngIf="title.sort"
+      [icon]="title.id === id ? iconName : 'pi pi-sort-alt'"
+      [rounded]="true"
+      [text]="true"
+      severity="secondary"
+      (click)="changeState(title.id)"
+    ></p-button>
+  </div>
+</div>
+

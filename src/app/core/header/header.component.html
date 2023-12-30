@@ -1,0 +1,24 @@
+<div class="header">
+  <div class="header__container">
+    <p-button label="Главная" [text]="true" severity="secondary" [routerLink]="['/']"></p-button>
+    <p-button
+      *ngIf="!isAuthenticated; else logOut"
+      iconPos="right"
+      icon="pi pi-user"
+      [rounded]="true"
+      [text]="true"
+      severity="info"
+      (click)="onAuthenticationPage()"
+    ></p-button>
+    <ng-template #logOut>
+      <p-button label="Выйти" [text]="true" severity="secondary" (click)="logout()"></p-button>
+      <p-avatar
+        (click)="onAuthenticationPage()"
+        class="header__avatar"
+        label="A"
+        styleClass="mr-2"
+        [style]="{ 'background-color': '#cc21f3', color: '#ffffff' }"
+        shape="circle"></p-avatar>
+    </ng-template>
+  </div>
+</div>

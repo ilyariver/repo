@@ -1,0 +1,51 @@
+<div class="authentication">
+  <form class="authentication__form" [formGroup]="form">
+    <div class="authentication__content" *ngIf="!isAuthenticated; else authenticated">
+      <div class="authentication__title">Авторизация</div>
+
+      <div class="authentication__input">
+        <label for="username">Имя пользователя</label>
+        <input
+          pInputText
+          id="username"
+          aria-describedby="username-help"
+          formControlName="username"
+          [ngClass]="{'ng-invalid ng-dirty': this.submit && form.get('username').hasError('required')}"
+        />
+        <small
+          *ngIf="this.submit && form.get('username').hasError('required')"
+          id="username-error"
+          style="color: red"
+        >Не корректное имя пользователя</small>
+      </div>
+
+      <div class="authentication__input">
+        <label for="pass">Пароль</label>
+        <p-password
+          id="pass"
+          [feedback]="false"
+          class="authentication__path-value"
+          formControlName="password"
+          [ngClass]="{'ng-invalid ng-dirty': this.submit && form.get('password').hasError('required')}"
+        ></p-password>
+        <small
+          *ngIf="this.submit && form.get('password').hasError('required')"
+          id="pass-error"
+          style="color: red"
+        >Не корректный пароль</small>
+      </div>
+
+      <div class="authentication__buttons">
+        <p-button label="Войти" [outlined]="true" severity="secondary" (click)="showDialog()"></p-button>
+        <p-button label="Отмена" [outlined]="true" severity="secondary" [routerLink]="['/']"></p-button>
+      </div>
+    </div>
+    <ng-template #authenticated>
+      <div class="authentication__title-auth">
+        <h1>Вы авторизованы</h1>
+      </div>
+    </ng-template>
+  </form>
+</div>
+
+<p-toast></p-toast>

@@ -1,0 +1,46 @@
+$borderRadius: 10px;
+
+:host {
+  app-to-do-item, .to-do-list__pagination {
+    border: 1px solid #d4d4d4;
+    border-radius: $borderRadius;
+  }
+}
+
+.to-do-list {
+  &__pagination {
+    margin-top: 24px;
+  }
+
+  &__spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+  }
+}
+
+
+::ng-deep {
+  app-to-do-list {
+    .p-paginator.p-component {
+      border-radius: $borderRadius;
+    }
+  }
+}
+
+.top {
+  margin-bottom: 24px;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
+
+
+
+.add-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+}

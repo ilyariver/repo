@@ -1,0 +1,41 @@
+<div class="top">
+  <h1 class="top__title">Список задач</h1>
+</div>
+
+<div class="to-do-list">
+
+  <app-to-do-list-header (sortParam)="sortParam($event)"></app-to-do-list-header>
+
+  <ng-container *ngIf="tasks?.length !== 0; else spinner">
+    <div class="to-do-list__content">
+      <app-to-do-item
+        *ngFor="let task of tasks"
+        [task]="task"
+        (removeTask)="removeTask($event)"
+      ></app-to-do-item>
+    </div>
+
+    <div class="to-do-list__pagination" *ngIf="totalTaskCount > 3">
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="first"
+        [rows]="rows"
+        [totalRecords]="totalTaskCount"
+        [pageLinkSize]="5"
+      ></p-paginator>
+    </div>
+  </ng-container>
+  <ng-template #spinner>
+    <div class="to-do-list__spinner">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </ng-template>
+</div>
+
+<p-button
+  icon="pi pi-plus"
+  [rounded]="true"
+  class="add-btn"
+  (click)="addNewTask()"
+></p-button>
+

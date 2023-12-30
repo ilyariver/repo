@@ -1,0 +1,19 @@
+:host {
+  z-index: 0;
+}
+
+.header {
+  padding: 20px 0;
+  box-shadow: 0 0 6px 0 #0000003d;
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}

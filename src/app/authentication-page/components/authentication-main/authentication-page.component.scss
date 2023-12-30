@@ -1,0 +1,68 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.authentication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    min-width: 400px;
+    min-height: 330px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 10px #00000008;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    gap: 0.1rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  &__title-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+
+    & > h1 {
+      font-weight: 700;
+      font-size: 40px;
+    }
+  }
+}
+
+::ng-deep {
+  app-authentication-page {
+    .authentication__path-value {
+      .p-password, .p-password-input {
+        width: 100%;
+      }
+    }
+
+    .p-button.p-button-secondary.p-button-outlined {
+      border: 1px solid #d7d7d7;
+    }
+  }
+}

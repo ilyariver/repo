@@ -1,0 +1,15 @@
+.table-header {
+  display: flex;
+  margin-bottom: 10px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+
+    &--center {
+      text-align: center;
+    }
+  }
+}

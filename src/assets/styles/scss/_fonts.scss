@@ -1,0 +1,10 @@
+@import "mixin";
+
+$fonts:
+  'roboto-light' 300,
+  'roboto-regular' 400,
+  'roboto-bold' 700;
+
+@each $name, $weight in $fonts {
+  @include font-face('roboto', $weight, $name);
+}

@@ -1,0 +1,84 @@
+<form class="to-do-item" [formGroup]="form">
+  <div class="to-do-item__item">
+    <input
+      type="text"
+      pInputText
+      formControlName="username"
+      placeholder="Имя"
+      (input)="changeInput()"
+      [ngClass]="{'ng-invalid ng-dirty': submit && form.get('username').hasError('required')}"
+    />
+  </div>
+  <div class="to-do-item__item">
+    <input
+      email
+      type="text"
+      pInputText
+      formControlName="email"
+      placeholder="Email"
+      (input)="changeInput()"
+      [ngClass]="{'ng-invalid ng-dirty': submit && checkEmail}"
+    />
+  </div>
+  <div class="to-do-item__item">
+    <textarea
+      rows="1"
+      cols="30"
+      pInputTextarea
+      [autoResize]="true"
+      formControlName="text"
+      placeholder="Текст"
+      (input)="changeInput()"
+      [ngClass]="{'ng-invalid ng-dirty': submit && form.get('text').hasError('required')}"
+    ></textarea>
+  </div>
+
+  <div class="to-do-item__item">
+    <p-checkbox
+      [label]="task.status ? 'Выполнено' : 'Не выполнено'"
+      [binary]="true"
+      formControlName="status"
+    ></p-checkbox>
+
+    <div class="to-do-item__edit">
+      <p-button
+        *ngIf="getAccessToFields().adminEdit"
+        class="to-do-item__direct"
+        icon="pi pi-file-edit"
+        severity="danger"
+        [rounded]="true"
+        [outlined]="true"
+        (click)="editTask(task.id)"
+      ></p-button>
+      <p-button
+        *ngIf="!getAccessToFields().create; else create"
+        class="to-do-item__direct"
+        icon="pi pi-save"
+        [rounded]="true"
+        [outlined]="true"
+        (click)="saveTask(task.id)"
+        [disabled]="saveTaskDisabled"
+      ></p-button>
+      <ng-template #create>
+        <p-button
+          class="to-do-item__direct"
+          icon="pi pi-save"
+          [rounded]="true"
+          [outlined]="true"
+          (click)="createTask()"
+          [disabled]="saveTaskDisabled"
+        ></p-button>
+      </ng-template>
+    </div>
+  </div>
+  <p-button
+    *ngIf="getAccessToFields().create"
+    class="to-do-item__remove"
+    icon="pi pi-times"
+    [text]="true"
+    severity="danger"
+    (click)="removeCreatedTask(task.id)"
+  ></p-button>
+</form>
+
+<p-toast></p-toast>
