@@ -1,0 +1,140 @@
+* {
+  // padding: 0;
+  // margin: 0;
+  // border: 0;
+  box-sizing: border-box;
+  // color: $fontColor;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active,
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &.lock {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: $fontSize + px;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  color: $color-black;
+  line-height: 1.5;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+a {
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    // border: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+sup {
+  color: inherit;
+}
+
+// оболочка над app-header app-main app-footer
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+app-main {
+  display: flex;
+  flex: 1 1 auto;
+  background-color: #f6f6f6;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-weight: 400;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $duration-normal $easing-back-out;
+  cursor: pointer;
+  &:hover {
+    color: $color-green;
+    text-decoration: none;
+  }
+}

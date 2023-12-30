@@ -1,0 +1,40 @@
+@use 'sass:math' as math;
+
+/**
+* Подключение шрифтов локально из папки "./src/fonts"
+*/
+@import 'scss/_fonts';
+
+/** Подключение переменных */
+@import "scss/variables";
+
+/**
+* Подключение sass function и mixins и extends стилей
+*/
+@import 'scss/functions';
+@import "scss/mixin";
+@import 'scss/patternSelectors';
+
+/** Обнуление */
+@import 'scss/reset';
+
+/**
+* Библиотеки
+* раскомментировать для использования
+*/
+// @import 'libs/aos';
+// @import 'libs/swiper';
+
+/**
+* Подключение custom scrollbar для всего сайта
+*/
+@import 'scss/scrollbar';
+
+/**
+* Общие параметры, шаблоны(заготовки) и вспомогательные классы
+*/
+@import 'scss/global';
+
+/**
+* Подключение стилей отдельных блоков и секций
+*/

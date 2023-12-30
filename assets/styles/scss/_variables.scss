@@ -1,0 +1,73 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+
+// PATHES
+$IMG_PATH: '/images';
+
+// COLORS
+$color-light-gray: #F9F9F9;
+$color-hover-gray: #D9D9D9;
+$color-gray: #858585;
+$color-black: #3D3D3F;
+$color-green: #00B007;
+$color-dark-green: #008F06;
+$color-darken-green: #007E05;
+$color-yellow: #ffc239;
+$color-red : #FF3D3D;
+
+
+// GRADIENT
+$gradient-green: transparent linear-gradient(90deg, #31c1a6 0%, #1e938d 100%) 0% 0% no-repeat padding-box;
+$gradient-black: radial-gradient(80.35% 104.45% at 76.87% 41.73%, #3D3B3B 0%, #121212 100%);
+
+//Shadows
+$shadow-thin: 0 0 3px 0 #828282;
+
+
+$maxWidth: 1920; // максимальная ширина страницы
+$minWidth: 320; // минимальная ширина телефона
+$maxWidthContainer: 1400; // ширина контейнера с учетом padding слева и справа
+$containerWidth: 1360; // ширина контейнера из макета
+
+$mainOffset: 15; // отступы безопасности для контейнера
+$mainFont: "Roboto", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;; // !указать здесь основное семейство шрифта
+$mainWeight: 400; // !указать здесь основное начертание шрифта
+
+$headerHeight: 100;
+$footerHeight: 100;
+
+$mainRadius: rem(10);
+
+// EASING TRANSITIONS
+$duration-normal: 0.4s;
+$easing-back-out: cubic-bezier(0.25, 0.74, 0.22, 1.1); // http://cubic-bezier.com/#.25,.74,.22,1.1
+$easing-back-in: cubic-bezier(0.47, -0.1, 0.5, -0.06); // http://cubic-bezier.com/#.47,-0.1,.5,-.06
+$easing-out: ease-out;
+$easing-in: ease-in;
+
+$whiteColor: #fff;
+$blackColor: #131313;
+$grayColor: #6f6f6f;
+$redColor: #ff4040;
+
+$firstAccentColor: $blackColor;
+$secondAccentColor: $redColor;
+
+// without scroll for margin-right
+$without-scroll-width: calc(-1 * (100vw - 100%));
+
+$base64: "data:image/svg+xml;base64,";
+
+$fontFamily: $mainFont, sans-serif; // Семейство шрифта по умолчанию
+$fontColor: $color-black; // Цвет шрифта по умолчанию
+$fontSize: 16; // Размер шрифта по умолчанию
+$fontWeight: $mainWeight; // Жирность шрифта по умолчанию
+
+$standartTrans: all 280ms ease-in-out 0ms;
+
+$btnBoxShadow: 0px 2px 3px rgba(#000, 10%), 0px 8px 3px rgba(#000, 10%);
+
+$lightBoxShadow: 0 0 2px 0 rgba(#000, 10%), 0 0 4px 0 rgba(#000, 10%),
+0 0 8px 0 rgba(#000, 10%);
+
+$hoverBoxShadow: 0 0 5px 0 rgba(#000, 10%), 0 0 10px 0 rgba(#000, 10%),
+0 0 15px 0 rgba(#000, 10%);
